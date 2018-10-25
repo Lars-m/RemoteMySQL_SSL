@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const fs = require('fs');
+const path = require('path');
 const mysql = require('mysql');
 
 var connection = mysql.createConnection({
@@ -10,9 +11,9 @@ var connection = mysql.createConnection({
   password: 'test',
   database: 'example',
   ssl: {
-    ca: fs.readFileSync(__dirname + '../../certs/ca.pem'),
-    key: fs.readFileSync(__dirname + '../../certs/client-key.pem'),
-    cert: fs.readFileSync(__dirname + '../../certs/client-cert.pem')
+    ca: fs.readFileSync(path.join(__dirname,'../certs/ca.pem')),
+    key: fs.readFileSync(path.join(__dirname,'../certs/client-key.pem')),
+    cert: fs.readFileSync(path.join(__dirname,  '../certs/client-cert.pem'))
   }
 });
 

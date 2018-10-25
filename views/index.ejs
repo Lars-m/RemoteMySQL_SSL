@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>
+    <%= info %>
+  </p>
+  <p>The MySql-server is hosted on a Digital Ocean Droplet and set up as explained <a target="_blank" href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssl-tls-for-mysql-on-ubuntu-16-04">here</a></p>
+  <p>The Expres-server uses the <code>mysql</code> packet and the connection is set up as explained <a href="https://techsparx.com/nodejs/howto/mysql-ssl-connect.html">here</a> </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Gender</th>
+        <th>Name</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i<rows.length; i++) { %>
+      <tr>
+        <td>
+          <%= rows[i].gender %>
+        </td> %>
+        <td>
+          <%= rows[i].firstName %>
+          <%= rows[i].lastName %>
+        </td> %>
+        <td>
+          <%= rows[i].email %>
+        </td> %>
+      </tr>
+      <% } %>
+
+    </tbody>
+  </table>
+</body>
+
+</html>
